@@ -9,6 +9,7 @@
 
 #import "ContainerViewHit.h"
 #import "ContainerViewGesture.h"
+#import "ContainerViewMix.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,7 @@
 @implementation ViewController {
     ContainerViewHit *_hitContainerView;
     ContainerViewGesture *_gestureContainerView;
+    ContainerViewMix *_mixContainerView;
 }
 
 - (void)viewDidLoad {
@@ -50,6 +52,19 @@
         [_gestureContainerView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:0.f],
         [_gestureContainerView.heightAnchor constraintEqualToConstant:150.f]
     ]];
+
+    // Mixed View Example
+    _mixContainerView = [[ContainerViewMix alloc] initWithFrame:CGRectZero];
+    [self.view addSubview:_mixContainerView];
+    [_mixContainerView setBackgroundColor:[UIColor magentaColor]];
+
+    _mixContainerView.translatesAutoresizingMaskIntoConstraints = NO;
+    [NSLayoutConstraint activateConstraints:@[
+        [_mixContainerView.topAnchor constraintEqualToAnchor:_gestureContainerView.bottomAnchor constant:20.f],
+        [_mixContainerView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:0.f],
+        [_mixContainerView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:0.f],
+        [_mixContainerView.heightAnchor constraintEqualToConstant:150.f]
+    ]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -58,6 +73,7 @@
 
     [_hitContainerView updateData];
     [_gestureContainerView updateData];
+    [_mixContainerView updateData];
 }
 
 @end

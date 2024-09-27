@@ -16,6 +16,7 @@
 		58E1ED0A2CA68F1A008395AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E1ED092CA68F1A008395AA /* main.m */; };
 		58E1ED122CA6974A008395AA /* ContainerViewHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E1ED112CA6974A008395AA /* ContainerViewHit.m */; };
 		58E1ED152CA69D9A008395AA /* ContainerViewGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E1ED142CA69D9A008395AA /* ContainerViewGesture.m */; };
+		58E1ED182CA70D7F008395AA /* ContainerViewMix.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E1ED172CA70D7F008395AA /* ContainerViewMix.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		58E1ED112CA6974A008395AA /* ContainerViewHit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewHit.m; sourceTree = "<group>"; };
 		58E1ED132CA69D9A008395AA /* ContainerViewGesture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewGesture.h; sourceTree = "<group>"; };
 		58E1ED142CA69D9A008395AA /* ContainerViewGesture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewGesture.m; sourceTree = "<group>"; };
+		58E1ED162CA70D7F008395AA /* ContainerViewMix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewMix.h; sourceTree = "<group>"; };
+		58E1ED172CA70D7F008395AA /* ContainerViewMix.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewMix.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				58E1ED112CA6974A008395AA /* ContainerViewHit.m */,
 				58E1ED132CA69D9A008395AA /* ContainerViewGesture.h */,
 				58E1ED142CA69D9A008395AA /* ContainerViewGesture.m */,
+				58E1ED162CA70D7F008395AA /* ContainerViewMix.h */,
+				58E1ED172CA70D7F008395AA /* ContainerViewMix.m */,
 			);
 			path = ButtonAndScrollViewDemo;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 				58E1ECF92CA68F18008395AA /* AppDelegate.m in Sources */,
 				58E1ED152CA69D9A008395AA /* ContainerViewGesture.m in Sources */,
 				58E1ED0A2CA68F1A008395AA /* main.m in Sources */,
+				58E1ED182CA70D7F008395AA /* ContainerViewMix.m in Sources */,
 				58E1ECFC2CA68F18008395AA /* SceneDelegate.m in Sources */,
 				58E1ED122CA6974A008395AA /* ContainerViewHit.m in Sources */,
 			);
