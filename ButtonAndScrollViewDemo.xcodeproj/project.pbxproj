@@ -14,7 +14,8 @@
 		58E1ED042CA68F1A008395AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58E1ED032CA68F1A008395AA /* Assets.xcassets */; };
 		58E1ED072CA68F1A008395AA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 58E1ED062CA68F1A008395AA /* Base */; };
 		58E1ED0A2CA68F1A008395AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E1ED092CA68F1A008395AA /* main.m */; };
-		58E1ED122CA6974A008395AA /* ContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E1ED112CA6974A008395AA /* ContainerView.m */; };
+		58E1ED122CA6974A008395AA /* ContainerViewHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E1ED112CA6974A008395AA /* ContainerViewHit.m */; };
+		58E1ED152CA69D9A008395AA /* ContainerViewGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E1ED142CA69D9A008395AA /* ContainerViewGesture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +31,10 @@
 		58E1ED062CA68F1A008395AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58E1ED082CA68F1A008395AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58E1ED092CA68F1A008395AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		58E1ED102CA6974A008395AA /* ContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerView.h; sourceTree = "<group>"; };
-		58E1ED112CA6974A008395AA /* ContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerView.m; sourceTree = "<group>"; };
+		58E1ED102CA6974A008395AA /* ContainerViewHit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewHit.h; sourceTree = "<group>"; };
+		58E1ED112CA6974A008395AA /* ContainerViewHit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewHit.m; sourceTree = "<group>"; };
+		58E1ED132CA69D9A008395AA /* ContainerViewGesture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewGesture.h; sourceTree = "<group>"; };
+		58E1ED142CA69D9A008395AA /* ContainerViewGesture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewGesture.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +78,10 @@
 				58E1ED052CA68F1A008395AA /* LaunchScreen.storyboard */,
 				58E1ED082CA68F1A008395AA /* Info.plist */,
 				58E1ED092CA68F1A008395AA /* main.m */,
-				58E1ED102CA6974A008395AA /* ContainerView.h */,
-				58E1ED112CA6974A008395AA /* ContainerView.m */,
+				58E1ED102CA6974A008395AA /* ContainerViewHit.h */,
+				58E1ED112CA6974A008395AA /* ContainerViewHit.m */,
+				58E1ED132CA69D9A008395AA /* ContainerViewGesture.h */,
+				58E1ED142CA69D9A008395AA /* ContainerViewGesture.m */,
 			);
 			path = ButtonAndScrollViewDemo;
 			sourceTree = "<group>";
@@ -153,9 +158,10 @@
 			files = (
 				58E1ECFF2CA68F18008395AA /* ViewController.m in Sources */,
 				58E1ECF92CA68F18008395AA /* AppDelegate.m in Sources */,
+				58E1ED152CA69D9A008395AA /* ContainerViewGesture.m in Sources */,
 				58E1ED0A2CA68F1A008395AA /* main.m in Sources */,
 				58E1ECFC2CA68F18008395AA /* SceneDelegate.m in Sources */,
-				58E1ED122CA6974A008395AA /* ContainerView.m in Sources */,
+				58E1ED122CA6974A008395AA /* ContainerViewHit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

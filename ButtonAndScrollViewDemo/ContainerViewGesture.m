@@ -1,23 +1,26 @@
 //
-//  ContainerView.m
+//  ContainerViewGesture.m
 //  ButtonAndScrollViewDemo
 //
 //  Created by Yevhen Dubinin on 9/27/24.
 //
 
-#import "ContainerView.h"
+#import "ContainerViewGesture.h"
 
-@implementation ContainerView {
+@implementation ContainerViewGesture  {
     UIButton *_closeButton;
     UICollectionView *_collectionView;
+    UIPanGestureRecognizer *_panGesture;
 }
+
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         [self setupCollectionViewWithParentView:self];
-        [self setupCloseButtonWithParentView:self];
+        // Note: parent is Collection View
+        [self setupCloseButtonWithParentView:_collectionView];
     }
     return self;
 }
@@ -52,6 +55,9 @@
 }
 
 - (void)setupCloseButtonWithParentView:(UIView *)parentView {
+    // Note: Layout view is self
+    UIView *layoutView = self;
+
     _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
 
     UIImage *xmarkImage = [UIImage systemImageNamed:@"xmark"];
@@ -67,13 +73,16 @@
 
     _closeButton.translatesAutoresizingMaskIntoConstraints = NO;
     [NSLayoutConstraint activateConstraints:@[
-        [_closeButton.centerXAnchor constraintEqualToAnchor:parentView.centerXAnchor constant:0.f],
-        [_closeButton.bottomAnchor constraintEqualToAnchor:parentView.bottomAnchor constant:0],
+        [_closeButton.centerXAnchor constraintEqualToAnchor:layoutView.centerXAnchor constant:0.f],
+        [_closeButton.bottomAnchor constraintEqualToAnchor:layoutView.bottomAnchor constant:0],
         [_closeButton.heightAnchor constraintEqualToConstant:100],
         [_closeButton.widthAnchor constraintEqualToConstant:100]
     ]];
-}
 
+    _panGesture = [[UIPanGestureRecognizer alloc] init];
+    _panGesture.delegate = self;
+    [_closeButton addGestureRecognizer:_panGesture];
+}
 
 #pragma mark - Actions
 
@@ -101,6 +110,17 @@
     return cell;
 }
 
+#pragma mark - Gesture Recognizer
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    if (otherGestureRecognizer == _collectionView.panGestureRecognizer) {
+        return YES;
+    }
+
+    return NO;
+}
+
 #pragma mark - Helpers
 
 - (UIColor *)randomColor {
@@ -108,19 +128,6 @@
     CGFloat green = arc4random_uniform(256) / 255.0;
     CGFloat blue = arc4random_uniform(256) / 255.0;
     return [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
-}
-
-#pragma mark - Hit Test
-
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
-{
-    UIView *hitView = [super hitTest:point withEvent:event];
-
-    if (hitView == _closeButton && _collectionView.panGestureRecognizer.state == UIGestureRecognizerStatePossible) {
-        return _collectionView;
-    }
-
-    return hitView;
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  ContainerView.h
+//  ContainerViewHit.h
 //  ButtonAndScrollViewDemo
 //
 //  Created by Yevhen Dubinin on 9/27/24.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ContainerView : UIView  <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ContainerViewHit : UIView  <UICollectionViewDelegate, UICollectionViewDataSource>
 
 - (void)updateData;
 
