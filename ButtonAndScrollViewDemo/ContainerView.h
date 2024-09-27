@@ -9,7 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ContainerView : UIView
+@interface ContainerView : UIView  <UICollectionViewDelegate, UICollectionViewDataSource>
+
+- (void)updateData;
 
 @end
 
