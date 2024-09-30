@@ -10,6 +10,7 @@
 @implementation ContainerViewHit {
     UIButton *_closeButton;
     UICollectionView *_collectionView;
+    UITapGestureRecognizer *_collectionViewTapGesture;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -49,6 +50,10 @@
         [_collectionView.trailingAnchor constraintEqualToAnchor:parentView.trailingAnchor constant:0.f],
         [_collectionView.bottomAnchor constraintEqualToAnchor:parentView.bottomAnchor constant:-50]
     ]];
+
+    _collectionViewTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(collectionViewTapped:)];
+    [_collectionView addGestureRecognizer:_collectionViewTapGesture];
+    [_collectionViewTapGesture fail]
 }
 
 - (void)setupCloseButtonWithParentView:(UIView *)parentView {
@@ -80,6 +85,14 @@
     NSLog(@"Close button tapped!");
 
     [_collectionView setContentOffset:CGPointZero animated:YES];
+}
+
+- (void)collectionViewTapped:(UITapGestureRecognizer *)gesture {
+    CGPoint point = [gesture locationInView: _collectionView];
+    CGPoint relativePoint = [self convertPoint:point fromView:_collectionView];
+    if (CGRectContainsPoint(_closeButton.frame, relativePoint)) {
+        [_closeButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    }
 }
 
 #pragma mark - UICollectionView DataSource
