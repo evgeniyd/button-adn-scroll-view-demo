@@ -53,7 +53,6 @@
 
     _collectionViewTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(collectionViewTapped:)];
     [_collectionView addGestureRecognizer:_collectionViewTapGesture];
-    [_collectionViewTapGesture fail]
 }
 
 - (void)setupCloseButtonWithParentView:(UIView *)parentView {
